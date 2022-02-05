@@ -3,6 +3,8 @@ import millify from 'millify'
 import {Typography, Row, Col, Statistic} from 'antd'
 import {Link} from 'react-router-dom'
 
+import Loader from './Loader';
+
 import { useGetCryptoStatsQuery } from '../services/cryptoApi'
 import {Cryptocurrencies, News} from '../components'
 
@@ -13,7 +15,7 @@ const HomePage = () => {
   
   const globalStats = cryptoStats
 
-  if(fetchingStats) return 'Loading ...'
+  if(fetchingStats) return <Loader />
   return (
     <>
       <Title level={2} className="heading">Global Crypto Stats</Title>
