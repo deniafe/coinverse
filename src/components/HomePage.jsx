@@ -27,13 +27,13 @@ const HomePage = () => {
           <Statistic title="Bitcoin Dominance Percentage" value={globalStats?.bitcoin_dominance_percentage} />
         </Col>
         <Col span={12}>
-          <Statistic title="Total Market Cap" value={millify(globalStats?.market_cap_ath_value)} />
+          <Statistic title="Total Market Cap" value={globalStats?.market_cap_ath_value} />
         </Col>
         <Col span={12}>
-          <Statistic title="Total 24th Volume" value={millify(globalStats?.volume_24h_ath_value)} />
+          <Statistic title="Total 24th Volume" value={globalStats?.volume_24h_ath_value} />
         </Col>
         <Col span={12}>
-          <Statistic title="Total Market Cap USD" value={millify(globalStats?.market_cap_usd)} />
+          <Statistic title="Total Market Cap USD" value={globalStats?.market_cap_usd} />
         </Col>
       </Row>
       <div className="home-heading-container">

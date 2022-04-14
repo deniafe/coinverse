@@ -28,19 +28,19 @@ const CryptoDetails = ({volume}) => {
   const time = ['1', '2', '3', '5', '7', '10', '20', '30']
 
   const stats = [
-    { title: 'Price to USD', value: `$ ${cryptoDetails?.market_data?.current_price?.usd && millify(cryptoDetails?.market_data?.current_price?.usd)}`, icon: <DollarCircleOutlined /> },
+    { title: 'Price to USD', value: `$ ${cryptoDetails?.market_data?.current_price?.usd && cryptoDetails?.market_data?.current_price?.usd}`, icon: <DollarCircleOutlined /> },
     { title: 'Rank', value: cryptoDetails?.market_cap_rank, icon: <NumberOutlined /> },
-    { title: 'Total Volume', value: `$ ${cryptoDetails?.market_data?.total_volume?.usd && millify(cryptoDetails?.market_data?.total_volume?.usd)}`, icon: <ThunderboltOutlined /> },
-    { title: 'Market Cap', value: `$ ${cryptoDetails?.market_data?.market_cap?.usd && millify(cryptoDetails?.market_data?.market_cap?.usd)}`, icon: <DollarCircleOutlined /> },
-    { title: 'All-time-high(daily avg.)', value: `$ ${cryptoDetails?.market_data?.high_24h?.usd && millify(cryptoDetails?.market_data?.high_24h?.usd)}`, icon: <TrophyOutlined /> },
+    { title: 'Total Volume', value: `$ ${cryptoDetails?.market_data?.total_volume?.usd && cryptoDetails?.market_data?.total_volume?.usd}`, icon: <ThunderboltOutlined /> },
+    { title: 'Market Cap', value: `$ ${cryptoDetails?.market_data?.market_cap?.usd && cryptoDetails?.market_data?.market_cap?.usd}`, icon: <DollarCircleOutlined /> },
+    { title: 'All-time-high(daily avg.)', value: `$ ${cryptoDetails?.market_data?.high_24h?.usd && cryptoDetails?.market_data?.high_24h?.usd}`, icon: <TrophyOutlined /> },
   ];
 
   const genericStats = [
     { title: 'Number Of Markets', value: cryptoDetails?.numberOfMarkets, icon: <FundOutlined /> },
     { title: 'Number Of Exchanges', value: cryptoDetails?.numberOfExchanges, icon: <MoneyCollectOutlined /> },
     { title: 'Aprroved Supply', value: cryptoDetails?.market_data?.max_supply >= 1 ? <CheckOutlined /> : <StopOutlined />, icon: <ExclamationCircleOutlined /> },
-    { title: 'Total Supply', value: `$ ${cryptoDetails?.market_data?.total_supply && millify(cryptoDetails?.market_data?.total_supply)}`, icon: <ExclamationCircleOutlined /> },
-    { title: 'Circulating Supply', value: `$ ${cryptoDetails?.market_data?.circulating_supply && millify(cryptoDetails?.market_data?.circulating_supply)}`, icon: <ExclamationCircleOutlined /> },
+    { title: 'Total Supply', value: `$ ${cryptoDetails?.market_data?.total_supply && cryptoDetails?.market_data?.total_supply}`, icon: <ExclamationCircleOutlined /> },
+    { title: 'Circulating Supply', value: `$ ${cryptoDetails?.market_data?.circulating_supply && cryptoDetails?.market_data?.circulating_supply}`, icon: <ExclamationCircleOutlined /> },
   ];
 
   return (
@@ -54,7 +54,7 @@ const CryptoDetails = ({volume}) => {
       <Select defaultValue="7" className="select-timeperiod" placeholder="Select Timeperiod" onChange={(value) => setTimeperiod(value)}>
         {time.map((date) => <Option key={date}>{date} days</Option>)}
       </Select>
-      <LineChart coinHistory={coinHistory?.prices} currentPrice={millify(cryptoDetails?.market_data?.current_price?.usd)} coinName={cryptoDetails?.name} />
+      <LineChart coinHistory={coinHistory?.prices} currentPrice={cryptoDetails?.market_data?.current_price?.usd} coinName={cryptoDetails?.name} />
       <Col className="stats-container">
         <Col className="coin-value-statistics">
           <Col className="coin-value-statistics-heading">
